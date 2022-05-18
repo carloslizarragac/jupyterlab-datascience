@@ -1,4 +1,5 @@
 # This is a basic workflow to help you get started with Actions
+# Add Paths of auxiliary files in Dockerfile
 
 name: JupyterLab Datascience
 
