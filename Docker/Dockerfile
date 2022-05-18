@@ -47,7 +47,7 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | s
     apt install gh
 
 # Install and configure jupyter lab.
-COPY jupyter_notebook_config.json /opt/conda/etc/jupyter/jupyter_notebook_config.json
+COPY Docker/jupyter_notebook_config.json /opt/conda/etc/jupyter/jupyter_notebook_config.json
 
 # Add sudo to jovyan user
 RUN apt update && \
@@ -84,7 +84,7 @@ RUN jupyter labextension install ijab
 USER jovyan
 EXPOSE 8888
 
-COPY entry.sh /bin
+COPY Docker/entry.sh /bin
 RUN mkdir -p /home/jovyan/.irods
 
 ENTRYPOINT ["bash", "/bin/entry.sh"]
