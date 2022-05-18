@@ -4,7 +4,9 @@ name: JupyterLab Datascience
 
 on:
   push:
-    branches: main
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   
@@ -16,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      - name: Login to Docker
+      - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
